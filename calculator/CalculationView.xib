@@ -9,44 +9,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculationView" customModule="calculator" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="mOd-ZD-Ur9"/>
+                <outlet property="operand1TextField" destination="ZnO-JR-THL" id="NsB-cw-tMA"/>
+                <outlet property="operand2TextField" destination="nYD-Pl-Vcc" id="ath-Sn-gR1"/>
+                <outlet property="operationLabel" destination="wzf-8f-nZj" id="fTq-9T-Ti9"/>
+                <outlet property="productTextField" destination="hTy-bH-le9" id="Dy6-Px-hHF"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="497" height="123"/>
+            <rect key="frame" x="0.0" y="0.0" width="646" height="117"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-JR-THL">
-                    <rect key="frame" x="22" y="46" width="112" height="30"/>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-JR-THL">
+                    <rect key="frame" x="22" y="22" width="161.5" height="73"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzf-8f-nZj" userLabel="operationLabel">
-                    <rect key="frame" x="150" y="51" width="42" height="21"/>
+                    <rect key="frame" x="199.5" y="48" width="42" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-B2-vXO">
-                    <rect key="frame" x="336" y="51" width="11" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-B2-vXO" userLabel="= Label">
+                    <rect key="frame" x="435.5" y="48" width="11" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYD-Pl-Vcc">
-                    <rect key="frame" x="208" y="47" width="112" height="30"/>
+                    <rect key="frame" x="257.5" y="43.5" width="162" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hTy-bH-le9" userLabel="product Text Field">
-                    <rect key="frame" x="363" y="46.5" width="112" height="30"/>
+                    <rect key="frame" x="462.5" y="43.5" width="161.5" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="ZnO-JR-THL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1VP-Fh-jgP"/>
                 <constraint firstItem="ZnO-JR-THL" firstAttribute="width" secondItem="nYD-Pl-Vcc" secondAttribute="width" id="2rt-1C-Byf"/>
@@ -54,7 +67,7 @@
                 <constraint firstItem="hTy-bH-le9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6mi-Gw-02A"/>
                 <constraint firstItem="wzf-8f-nZj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D2Z-xg-hPj"/>
                 <constraint firstItem="FfK-B2-vXO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FcK-df-caj"/>
-                <constraint firstItem="ZnO-JR-THL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="Lrq-sE-OVl"/>
+                <constraint firstItem="ZnO-JR-THL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="Lrq-sE-OVl"/>
                 <constraint firstItem="hTy-bH-le9" firstAttribute="width" secondItem="ZnO-JR-THL" secondAttribute="width" id="UF0-QC-Aba"/>
                 <constraint firstItem="nYD-Pl-Vcc" firstAttribute="leading" secondItem="wzf-8f-nZj" secondAttribute="trailing" constant="16" id="cjQ-tn-h80"/>
                 <constraint firstItem="wzf-8f-nZj" firstAttribute="leading" secondItem="ZnO-JR-THL" secondAttribute="trailing" constant="16" id="dd0-Nd-Hcg"/>
@@ -64,7 +77,7 @@
                 <constraint firstAttribute="trailing" secondItem="hTy-bH-le9" secondAttribute="trailing" constant="22" id="yOv-lh-Gcc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="128.5" y="-218.5"/>
+            <point key="canvasLocation" x="203" y="-221.5"/>
         </view>
     </objects>
 </document>

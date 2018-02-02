@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class ViewController: UIViewController {
-
+class ViewController: UITableViewController {
+    
+    let disposeBag = DisposeBag()
+    @IBOutlet weak var additionView: CalculationView!
+    @IBOutlet weak var substructionView: CalculationView!
+    @IBOutlet weak var multiplicationView: CalculationView!
+    @IBOutlet weak var divisionView: CalculationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        additionView.operation = .addition
+        substructionView.operation = .substraction
+        multiplicationView.operation = .multiplication
+        divisionView.operation = .division
+    
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

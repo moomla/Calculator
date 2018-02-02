@@ -19,16 +19,12 @@ class CalculationView: UIView {
     @IBOutlet weak var productTextField: UITextField!
     @IBOutlet weak var operationLabel: UILabel!
     
-    var operation: Operator? {
+    var calculationModel: CalculationModelProtocol? {
         didSet {
-            operationLabel.text = operation?.sign
-            guard let operationUnwraped = operation else { return }
-            calculationModel = CalculationModel(operation:operationUnwraped)
+            operationLabel.text = calculationModel?.operation.sign
             setupBinding()
         }
     }
-    
-    var calculationModel: CalculationModel?
     let disposeBag = DisposeBag()
     
     override init(frame:CGRect) {

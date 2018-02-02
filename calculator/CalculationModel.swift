@@ -9,14 +9,21 @@
 import Foundation
 import RxSwift
 
-class CalculationModel {
+public protocol CalculationModelProtocol {
+    var operation: Operator { get set }
+    var operand1: Variable<Double?> { get }
+    var operand2: Variable<Double?> { get set }
+    var result: Observable<String?> { get }
+}
+
+public class CalculationModel : CalculationModelProtocol {
     
-    var operation: Operator
-    var operand1: Variable<Double?> = Variable(nil)
-    var operand2: Variable<Double?> = Variable(nil)
-    var result: Observable<String?>
+    public var operation: Operator
+    public var operand1: Variable<Double?> = Variable(nil)
+    public var operand2: Variable<Double?> = Variable(nil)
+    public var result: Observable<String?>
     
-    init(operation: Operator) {
+    public init(operation: Operator) {
         self.operation = operation
         result = Observable.combineLatest(operand1.asObservable(), operand2.asObservable()){ (o1, o2) -> String in
             guard let op1 = o1,

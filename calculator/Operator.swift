@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Operator: String {
+public enum Operator: String {
     case addition
     case substraction
     case multiplication

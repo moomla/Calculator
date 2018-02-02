@@ -21,10 +21,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        additionView.operation = .addition
-        substructionView.operation = .substraction
-        multiplicationView.operation = .multiplication
-        divisionView.operation = .division
+        additionView.calculationModel = CalculationModel(operation:.addition)
+        substructionView.calculationModel = CalculationModel(operation:.substraction)
+        multiplicationView.calculationModel = CalculationModel(operation:.multiplication)
+        divisionView.calculationModel = CalculationModel(operation:.division)
     
     }
     

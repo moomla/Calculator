@@ -7,11 +7,12 @@ target 'calculator' do
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
 
-  # Pods for calculator
-
   target 'calculatorTests' do
     inherit! :search_paths
+    
     # Pods for testing
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
   end
 
 end

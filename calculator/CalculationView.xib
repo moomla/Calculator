@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="497" height="123"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZnO-JR-THL">
+                    <rect key="frame" x="22" y="46" width="112" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzf-8f-nZj" userLabel="operationLabel">
+                    <rect key="frame" x="150" y="51" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-B2-vXO">
+                    <rect key="frame" x="336" y="51" width="11" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYD-Pl-Vcc">
+                    <rect key="frame" x="208" y="47" width="112" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hTy-bH-le9" userLabel="product Text Field">
+                    <rect key="frame" x="363" y="46.5" width="112" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZnO-JR-THL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1VP-Fh-jgP"/>
+                <constraint firstItem="ZnO-JR-THL" firstAttribute="width" secondItem="nYD-Pl-Vcc" secondAttribute="width" id="2rt-1C-Byf"/>
+                <constraint firstItem="nYD-Pl-Vcc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="54T-DM-eTd"/>
+                <constraint firstItem="hTy-bH-le9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6mi-Gw-02A"/>
+                <constraint firstItem="wzf-8f-nZj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D2Z-xg-hPj"/>
+                <constraint firstItem="FfK-B2-vXO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FcK-df-caj"/>
+                <constraint firstItem="ZnO-JR-THL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="Lrq-sE-OVl"/>
+                <constraint firstItem="hTy-bH-le9" firstAttribute="width" secondItem="ZnO-JR-THL" secondAttribute="width" id="UF0-QC-Aba"/>
+                <constraint firstItem="nYD-Pl-Vcc" firstAttribute="leading" secondItem="wzf-8f-nZj" secondAttribute="trailing" constant="16" id="cjQ-tn-h80"/>
+                <constraint firstItem="wzf-8f-nZj" firstAttribute="leading" secondItem="ZnO-JR-THL" secondAttribute="trailing" constant="16" id="dd0-Nd-Hcg"/>
+                <constraint firstItem="hTy-bH-le9" firstAttribute="leading" secondItem="FfK-B2-vXO" secondAttribute="trailing" constant="16" id="fZh-hQ-8Jf"/>
+                <constraint firstItem="ZnO-JR-THL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="k14-0F-Bhb"/>
+                <constraint firstItem="FfK-B2-vXO" firstAttribute="leading" secondItem="nYD-Pl-Vcc" secondAttribute="trailing" constant="16" id="pe4-9P-eTR"/>
+                <constraint firstAttribute="trailing" secondItem="hTy-bH-le9" secondAttribute="trailing" constant="22" id="yOv-lh-Gcc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="128.5" y="-218.5"/>
+        </view>
+    </objects>
+</document>

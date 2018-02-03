@@ -1,5 +1,5 @@
 //
-//  calculatorTests.swift
+//  calculationViewTests.swift
 //  calculatorTests
 //
 //  Created by Dina Vaingolts on 31/01/2018.
@@ -12,7 +12,7 @@ import RxCocoa
 
 @testable import calculator
 
-class calculatorTests: XCTestCase {
+class calculationViewTests: XCTestCase {
 
     var model: CalculationModel?
     var op1: Double?

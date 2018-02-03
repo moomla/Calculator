@@ -74,4 +74,19 @@ class calculationViewTests: XCTestCase {
             }
     }
     
+    func testNonDigitInput() {
+        let intInput = Int(arc4random_uniform(1000))
+        let inputWithNonDigits = "notDigits" + String(intInput) + "notDigits"
+        
+        calculationView.operand1TextField.text = inputWithNonDigits
+        calculationView.operand1TextField.sendActions(for: .valueChanged)
+        XCTAssertNotNil(calculationView.operand1TextField.text)
+        XCTAssertEqual(calculationView.operand1TextField.text!, String(intInput))
+        
+        calculationView.operand2TextField.text = inputWithNonDigits
+        calculationView.operand2TextField.sendActions(for: .valueChanged)
+        XCTAssertNotNil(calculationView.operand2TextField.text)
+        XCTAssertEqual(calculationView.operand2TextField.text!, String(intInput))
+    }
+    
 }

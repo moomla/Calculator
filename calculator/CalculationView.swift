@@ -52,15 +52,16 @@ class CalculationView: UIView {
         productTextField.isUserInteractionEnabled = false
         
         //prevent entering non digit input
-        operand1TextField.rx.text
+        operand1TextField.rx.text.asObservable()
             .map{
                 $0?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             }
             .bind(to: operand1TextField.rx.text)
             .disposed(by:disposeBag)
         
-        operand2TextField.rx.text.map{
-            $0?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        operand2TextField.rx.text
+            .map{
+                $0?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             }
             .bind(to: operand2TextField.rx.text)
             .disposed(by:disposeBag)
@@ -73,16 +74,16 @@ class CalculationView: UIView {
         
         //bind the model to textFields
         model.operand1.asObservable()
+            .distinctUntilChanged{$0 != $1}
+            .filter{ $0 != nil }
             .map{String(describing: $0)}
-            .filter{$0 != "nil"}
-            .distinctUntilChanged()
             .bind(to: operand1TextField.rx.text)
             .disposed(by:disposeBag)
         
         model.operand2.asObservable()
+            .distinctUntilChanged{$0 != $1}
+            .filter{ $0 != nil }
             .map{String(describing: $0)}
-            .filter{$0 != "nil"}
-            .distinctUntilChanged()
             .bind(to: operand2TextField.rx.text)
             .disposed(by:disposeBag)
         

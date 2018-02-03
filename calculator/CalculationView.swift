@@ -21,8 +21,8 @@ class CalculationView: UIView {
     
     var calculationModel: CalculationModelProtocol? {
         didSet {
-            operationLabel.text = calculationModel?.operation.sign
-            setupBinding()
+            guard let model = calculationModel else { return }
+            setupBinding(model: model)
         }
     }
     let disposeBag = DisposeBag()
@@ -46,14 +46,11 @@ class CalculationView: UIView {
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-    }
-    
-    
-    func setupBinding() {
+        
         operand1TextField.keyboardType = .numberPad
         operand2TextField.keyboardType = .numberPad
         productTextField.isUserInteractionEnabled = false
-
+        
         //prevent entering non digit input
         operand1TextField.rx.text
             .map{
@@ -63,27 +60,46 @@ class CalculationView: UIView {
             .disposed(by:disposeBag)
         
         operand2TextField.rx.text.map{
-                $0?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+            $0?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             }
             .bind(to: operand2TextField.rx.text)
             .disposed(by:disposeBag)
+    }
+    
+    
+    func setupBinding(model: CalculationModelProtocol) {
         
-        //bind textFields to model
-        guard let calculationModelUnwraped = calculationModel else { return }
+        operationLabel.text = model.operation.sign
         
+        //bind the model to textFields
+        model.operand1.asObservable()
+            .map{String(describing: $0)}
+            .filter{$0 != "nil"}
+            .distinctUntilChanged()
+            .bind(to: operand1TextField.rx.text)
+            .disposed(by:disposeBag)
+        
+        model.operand2.asObservable()
+            .map{String(describing: $0)}
+            .filter{$0 != "nil"}
+            .distinctUntilChanged()
+            .bind(to: operand2TextField.rx.text)
+            .disposed(by:disposeBag)
+        
+        //bind textFields to the model
         operand1TextField.rx.text
             .filter{ $0 != nil }
             .map{ Double($0!) }
-            .bind(to:calculationModelUnwraped.operand1)
+            .bind(to:model.operand1)
             .disposed(by:disposeBag)
         
         operand2TextField.rx.text
             .filter{ $0 != nil }
             .map{ Double($0!) }
-            .bind(to:calculationModelUnwraped.operand2)
+            .bind(to:model.operand2)
             .disposed(by:disposeBag)
         
-        calculationModelUnwraped.result
+        model.result
             .bind(to: productTextField.rx.text)
             .disposed(by:disposeBag)
     }
